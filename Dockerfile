@@ -11,7 +11,7 @@ RUN addgroup --gid 1234 minecraft
 RUN adduser --disabled-password --home=/data --uid 1234 --gid 1234 --gecos "minecraft user" minecraft
 
 RUN mkdir /tmp/feed-the-beast && cd /tmp/feed-the-beast && \
-	wget -c https://media.forgecdn.net/files/2481/284/FTBPresentsSkyfactory3Server_${VERSION}.zip -O FTBInfinityServer.zip && \
+	wget -c https://media.forgecdn.net/files/2699/759/SkyFactory_4_Server_${VERSION}}.zip -O FTBInfinityServer.zip && \
 	unzip FTBInfinityServer.zip && \
 	rm FTBInfinityServer.zip && \
 	bash -x FTBInstall.sh && \
@@ -30,6 +30,6 @@ WORKDIR /data
 
 CMD /start
 
-ENV MOTD A Minecraft (FTB SkyFactory 3 ${VERSION}) Server Powered by Docker
+ENV MOTD A Minecraft (FTB SkyFactory 4 ${VERSION}) Server Powered by Docker
 ENV LEVEL world
-ENV JVM_OPTS -Xms2048m -Xmx2048m
+ENV JVM_OPTS -Xms6500m -Xmx2048m
